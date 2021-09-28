@@ -21,6 +21,11 @@ app.get('/pokemon', (req, res) => {
     console.log("Welcome to the Master Pokedex.")
   });
 
+app.get('/pokemon/:id', (req, res) => {
+    res.render("show.ejs", {pokemonShow: pokemon[req.params.id]})
+    console.log(`Welcome to the Pokedex's ${pokemon[req.params.id].name} Info Page.`)
+  });
+
 app.listen(Port, () => {
     console.log("Gotta catch 'em all...or at least some of them...");
 });
