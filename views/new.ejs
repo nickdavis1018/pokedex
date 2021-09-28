@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Pokemon</title>
+</head>
+<body>
+    <h1>Create New Pokemon</h1>
+    <form action="/pokemon" method="POST">
+        <h5>Pokemon Info</h5>
+        <h7>Name</h7><br>
+        <input type="text" name="name"/><br/>
+        <h7>Classification</h7><br>
+        <input type="text" name="classification" /><br/>
+        <h5>Pokemon Type</h5>
+        <h7>Primary Type</h7><br>
+        <input type="text" name="type1"/><br/>
+        <h7>Secondary Type</h7><br>
+        <input type="text" name="type2" /><br/>
+        <h7>Tertiary Type</h7><br>
+        <input type="text" name="type3" /><br/>
+        <h5>Pokemon Stats</h5>
+        <h7>HP</h7><br><input type="number" name="hp" /><br/>
+        <h7>Attack</h7><br><input type="number" name="attack" /><br/>
+        <h7>Defense</h7><br><input type="number" name="defense" /><br/>
+        <h7>Special Attack</h7><br><input type="number" name="special-attack" /><br/>
+        <h7>Special Defense</h7><br><input type="number" name="special-defense" /><br/>
+        <h7>Speed</h7><br><input type="number" name="speed" /><br/>
+        <h5>Pokemon Damages</h5>
+        <h7>Standard</h7><br><input type="number" name="normal" /><br/>
+        <h7>Fire</h7><br><input type="number" name="fire" /><br/>
+        <h7>Water</h7><br><input type="number" name="water" /><br/>
+        <h7>Electric</h7><br><input type="number" name="electric" /><br/>
+        <h7>Grass</h7><br><input type="number" name="grass" /><br/>
+        <h7>Ice</h7><br><input type="number" name="ice" /><br/>
+        <h7>Fight</h7><br><input type="number" name="fight" /><br/>
+        <h7>Poison</h7><br><input type="number" name="poison" /><br/>
+        <h7>Ground</h7><br><input type="number" name="ground" /><br/>
+        <h7>Flying</h7><br><input type="number" name="flying" /><br/>
+        <h7>Psychic</h7><br><input type="number" name="psychic" /><br/>
+        <h7>Bug</h7><br><input type="number" name="bug" /><br/>
+        <h7>Rock</h7><br><input type="number" name="rock" /><br/>
+        <h7>Ghost</h7><br><input type="number" name="ghost" /><br/>
+        <h7>Dragon</h7><br><input type="number" name="dragon" /><br/>
+        <h7>Dark</h7><br><input type="number" name="dark" /><br/>
+        <h7>Steel</h7><br><input type="number" name="steel" /><br/>
+        <h5>Pokemon Extras</h5>
+        <h7>Imgur Link</h7><br>
+        <input type="url" name="img"/><br/>
+        <h7>New Pokemon Description</h7><br>
+        <input type="text" name="description"><br/><br/>
+        <input type="submit" value="Create Pokemon"/>
+    </form>
+</body>
+</html>

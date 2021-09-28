@@ -21,6 +21,11 @@ app.get('/pokemon', (req, res) => {
     console.log("Welcome to the Master Pokedex.")
   });
 
+app.get('/pokemon/new', (req, res) => {
+    res.render("new.ejs")
+    console.log("You're a Poke-God! Create at will - the world is your Cloyster.")
+  });
+
 app.get('/pokemon/:id', (req, res) => {
     res.render("show.ejs", {pokemonShow: pokemon[req.params.id]})
     console.log(`Welcome to the Pokedex's ${pokemon[req.params.id].name} Info Page.`)
