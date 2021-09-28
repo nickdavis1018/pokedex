@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pokemon</title>
+</head>
+<body>
+    <h1>Edit <%=pokemonEdit.name%></h1>
+    <form action="/pokemon/<%=pokemonEdit.editKey%>?_method=PUT" method="POST">
+        <h5>Pokemon Info</h5>
+        <h7>Name</h7><br>
+        <input type="text" name="name" value="<%=pokemonEdit.name%>"/><br/>
+        <h7>ID</h7>
+        <input type="text" name="id" value="<%=pokemonEdit.id%>" readonly/><br/>
+        <h7>Classification</h7><br>
+        <input type="text" name="classification" value="<%=pokemonEdit.misc.classification%>"/><br/>
+        <img src="<%=pokemonEdit.img%>"><br>
+        <h7>Image Link</h7><br>
+        <input type="url" name="img" value="<%=pokemonEdit.img%>"/><br/>
+        <h5>Pokemon Type</h5>
+        <h7>Primary Type</h7><br>
+        <input type="text" name="type1" value="<%=pokemonEdit.type[0]%>"/><br/>
+        <h7>Secondary Type</h7><br>
+        <input type="text" name="type2" value="<%=pokemonEdit.type[1]%>"/><br/>
+        <h7>Tertiary Type</h7><br>
+        <input type="text" name="type3" value="<%=pokemonEdit.type[2]%>"/><br/>
+        <h5>Pokemon Stats</h5>
+        <h7>HP</h7><br><input type="number" name="hp" value="<%=pokemonEdit.stats.hp%>"/><br/>
+        <h7>Attack</h7><br><input type="number" value="<%=pokemonEdit.stats.attack%>"/><br/>
+        <h7>Defense</h7><br><input type="number" name="defense" value="<%=pokemonEdit.stats.defense%>"/><br/>
+        <h7>Special Attack</h7><br><input type="number" name="special-attack" value="<%=pokemonEdit.stats.spattack%>"/><br/>
+        <h7>Special Defense</h7><br><input type="number" name="special-defense" value="<%=pokemonEdit.stats.spdefense%>" /><br/>
+        <h7>Speed</h7><br><input type="number" name="speed" value="<%=pokemonEdit.stats.speed%>"/><br/>
+        <h5>Pokemon Damages</h5>
+        <h7>Standard</h7><br><input type="number" name="normal" value="<%=pokemonEdit.damages.normal%>"/><br/>
+        <h7>Fire</h7><br><input type="number" name="fire" value="<%=pokemonEdit.damages.fire%>"/><br/>
+        <h7>Water</h7><br><input type="number" name="water" value="<%=pokemonEdit.damages.water%>"/><br/>
+        <h7>Electric</h7><br><input type="number" name="electric" value="<%=pokemonEdit.damages.electric%>"/><br/>
+        <h7>Grass</h7><br><input type="number" name="grass" value="<%=pokemonEdit.damages.grass%>"/><br/>
+        <h7>Ice</h7><br><input type="number" name="ice" value="<%=pokemonEdit.damages.ice%>"/><br/>
+        <h7>Fight</h7><br><input type="number" name="fight" value="<%=pokemonEdit.damages.fight%>"/><br/>
+        <h7>Poison</h7><br><input type="number" name="poison" value="<%=pokemonEdit.damages.poison%>"/><br/>
+        <h7>Ground</h7><br><input type="number" name="ground" value="<%=pokemonEdit.damages.ground%>"/><br/>
+        <h7>Flying</h7><br><input type="number" name="flying" value="<%=pokemonEdit.damages.flying%>"/><br/>
+        <h7>Psychic</h7><br><input type="number" name="psychic" value="<%=pokemonEdit.damages.psychic%>"/><br/>
+        <h7>Bug</h7><br><input type="number" name="bug" value="<%=pokemonEdit.damages.bug%>"/><br/>
+        <h7>Rock</h7><br><input type="number" name="rock" value="<%=pokemonEdit.damages.rock%>"/><br/>
+        <h7>Ghost</h7><br><input type="number" name="ghost" value="<%=pokemonEdit.damages.ghost%>"/><br/>
+        <h7>Dragon</h7><br><input type="number" name="dragon" value="<%=pokemonEdit.damages.dragon%>"/><br/>
+        <h7>Dark</h7><br><input type="number" name="dark" value="<%=pokemonEdit.damages.dark%>"/><br/>
+        <h7>Steel</h7><br><input type="number" name="steel" value="<%=pokemonEdit.damages.steel%>"/><br/>
+        <input type="submit" value="Create Pokemon"/>
+    </form>
+</body>
+</html>
