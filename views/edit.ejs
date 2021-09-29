@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit <%=pokemonEdit.name%></h1>
-    <form action="/pokemon/<%=pokemonEdit.editKey%>?_method=PUT" method="POST">
+    <form action="/pokemon/<%=editKey%>?_method=PUT" method="POST">
         <h5>Pokemon Info</h5>
         <h7>Name</h7><br>
         <input type="text" name="name" value="<%=pokemonEdit.name%>"/><br/>
@@ -51,7 +51,7 @@
         <h7>Dragon</h7><br><input type="number" name="dragon" value="<%=pokemonEdit.damages.dragon%>"/><br/>
         <h7>Dark</h7><br><input type="number" name="dark" value="<%=pokemonEdit.damages.dark%>"/><br/>
         <h7>Steel</h7><br><input type="number" name="steel" value="<%=pokemonEdit.damages.steel%>"/><br/>
-        <input type="submit" value="Create Pokemon"/>
+        <input type="submit" name="" value="Edit Pokemon"/>
     </form>
 </body>
 </html>
