@@ -1,0 +1,124 @@
+h7{
+    font-weight: bold;
+}
+
+#home{
+    font-size: 40px;
+    margin-left: 20px;
+    color: white;
+}
+
+#master{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(204, 83, 83);
+}
+
+#new-poke {
+    color: white;
+    background-color: gray;
+}
+
+#banner-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 28px;
+    margin-left: 20px;
+}
+
+#go-back{
+    color: white;
+    background-color: rgb(207, 124, 124);
+}
+
+#edit-poke {
+    color: white;
+    background-color: gray;
+}
+
+#remove-poke{
+    color: white;
+    background-color: rgb(204, 83, 83);
+}
+
+.new-box{
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+#create-submit{
+    color: white;
+    background-color: rgb(113, 111, 230);
+}
+
+#master-div-edit{
+    display: flex;
+    flex-direction: row;
+}
+
+#change-poke{
+    color: white;
+    background-color: rgb(113, 111, 230);
+}
+
+#master-new{
+    display: flex;
+    flex-direction: row;
+}
+
+.edit-box{
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.poke-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid black 1px;
+    text-align: center;
+}
+
+#show-master{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.show-internal{
+    border: solid black 1px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 800px) {
+    #master{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr)
+    }
+    #banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+    #master-div-edit{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #banner-buttons{
+        display: flex;
+        flex-direction: column;}
+
+    #master-new{
+        display: flex;
+        flex-direction: column;
+    }}

@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Pokemon Info</title>
 </head>
 <body>
-    <h2>Name</h2>
+    <div id="banner">
+        <h1 id="home"><%=pokemonShow.name%></h1>
+        <div id="banner-buttons">
+            <form action="/pokemon/" method="GET">
+                <input type="submit" id="go-back" value="Home">
+                </form> 
+            <form action="/pokemon/new/" method="GET">
+                <input type="submit" id="new-poke" value="Create New Pokemon">
+                </form> 
+        </div>
+        </div>
+    <div id="show-master"><div class="show-internal">
     <h3><%=pokemonShow.name%></h3>
-    <h5><%=pokemonShow.id%></h5>
+    <h5>ID: <%=pokemonShow.id%></h5>
     <img src="<%=pokemonShow.img%>">
+    </div><div class="show-internal">
     <h4>Classification and Types</h4>
     <h5><%=pokemonShow.misc.classification%></h5>
-    <ul>
+    <ul>Types
     <% for(let i=0; i < pokemonShow.type.length; i++){ %>
     <li><%= pokemonShow.type[i] %></li>
     <% } %>
-    </ul>
+    </ul></div><div class="show-internal">
     <h4>Stats</h4>
     <h5>HP: <%=pokemonShow.stats.hp%></h5>
     <h5>Attack: <%=pokemonShow.stats.attack%></h5>
     <h5>Defense: <%=pokemonShow.stats.defense%></h5>
     <h5>Special Attack: <%=pokemonShow.stats.spattack%></h5>
     <h5>Special Defense: <%=pokemonShow.stats.spdefense%></h5>
-    <h5>Speed: <%=pokemonShow.stats.speed%></h5>
+    <h5>Speed: <%=pokemonShow.stats.speed%></h5></div><div class="show-internal">
     <h4>Damages</h4>
     <h5>Standard: <%=pokemonShow.damages.normal%></h5>
     <h5>Fire: <%=pokemonShow.damages.fire%></h5>
@@ -43,5 +58,7 @@
     <h5>Dragon: <%=pokemonShow.damages.dragon%></h5>
     <h5>Dark: <%=pokemonShow.damages.dark%></h5>
     <h5>Steel: <%=pokemonShow.damages.steel%></h5>
+</div>
+</div>
 </body>
 </html>

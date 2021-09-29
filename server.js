@@ -4,6 +4,13 @@ const methodOverride = require('method-override')
 const pokemon = require('./models/pokemon.js')
 const Port = 3000
 
+// START MIDDLEWARE //
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(express.static("public"))
+app.use(methodOverride('_method'))
+// END MIDDLEWARE //
+
 for(let i=0; i < pokemon.length; i++){
   pokemon[i].id = Number(pokemon[i].id)
   pokemon[i].stats.hp = Number(pokemon[i].stats.hp)
@@ -30,13 +37,6 @@ for(let i=0; i < pokemon.length; i++){
   pokemon[i].damages.dark = Number(pokemon[i].damages.dark)
   pokemon[i].damages.steel = Number(pokemon[i].damages.steel)
 }
-
-// START MIDDLEWARE //
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
-app.use(express.static("public"))
-app.use(methodOverride('_method'))
-// END MIDDLEWARE //
 
 app.get('/', (req, res) => {
     res.send("<html>Welcome to the Pokedex Server. You are being re-directed...<script>window.location.href = 'http://localhost:3000/pokemon'</script></html>")
@@ -93,10 +93,11 @@ app.put("/pokemon/:id", (req, res) => {
       pokemon[req.params.id].damages.dark = Math.ceil(req.body.dark / 0.25) * 0.25
       pokemon[req.params.id].damages.steel = Math.ceil(req.body.steel / 0.25) * 0.25
     res.redirect("/pokemon")
-    console.log(`Put your update for ${pokemon[req.params.id].name} in the Pokedex!`)
+    console.log(`We put your update for ${pokemon[req.params.id].name} in the Pokedex!`)
     });
 
 app.post("/pokemon", (req, res) => {
+  console.log(`Posted ${req.body.name} to the Pokedex with an ID of ${pokemon.length + 1}!`)
     if(req.body.img === ""){
       req.body.img = "https://imgur.com/UFvoWQa.png"
     }
@@ -158,10 +159,8 @@ app.post("/pokemon", (req, res) => {
       delete req.body.dark
       req.body.damages.steel = Math.ceil(req.body.steel / 0.25) * 0.25
       delete req.body.steel
-      console.log(req.body)
       pokemon.push(req.body)
       res.redirect("/pokemon")
-      console.log(`Posted ${req.body.name} to the Pokedex with an ID of ${req.body.id}!`)
       });
 
 app.get('/pokemon/:id/edit', (req, res) => {

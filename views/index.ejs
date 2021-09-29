@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Master Pokedex</title>
 </head>
 <body>
+<div id="banner">
+<h1 id="home">Pokedex Home</h1>
+<div id="banner-buttons">
+<form action="/pokemon/new/?_method=GET" method="GET">
+<input type="submit" id="new-poke" value="Create New Pokemon">
+</form> 
+</div>
+</div>
+<div id="master">
 <% for(let i=0; i < pokemonIndex.length; i++){ %>
+    <div class="poke-div" id="poke-div-<%=i%>">
     <h1><%=pokemonIndex[i].name%></h1> 
-    <a href="http://localhost:3000/pokemon/<%=i%>"><img src="<%=pokemonIndex[i].img%>"></a>
-    <form action="/pokemon/<%=i%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
-    </form>
+    <a href="http://localhost:3000/pokemon/<%=i%>"><img src="<%=pokemonIndex[i].img%>" width="250px"></a>
+    <div class="poke-button-div">
     <form action="/pokemon/<%=i%>/edit/?_method=GET" method="GET">
-        <input type="submit" value="EDIT">
+        <input type="submit" id="edit-poke" value="EDIT">
     </form>
+    <form action="/pokemon/<%=i%>?_method=DELETE" method="POST">
+        <input type="submit" id="remove-poke" value="DELETE">
+    </form>
+</div>
+    </div>
 <% } %>
+</div>
 </body>
 </html>
